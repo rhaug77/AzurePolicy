@@ -8,6 +8,13 @@ This documentation is meant to provide a guide to the use of the scripts sourced
 - [Overview of Trigger-PolicyEvaluation.PS1](./README.md#overview-of-trigger-policyEvaluationps1) 
 - [Overview of Trigger-PolicyInitiativeRemediation.PS1](./README.md#overview-of-trigger-policyinitiativeremediationps1)
 
+**UPDATES!**</span> - August 13, 2020
+
+- **Azure DevOps Support**: All scripts now support the ability to run in Azure DevOps with an "**-ADO**" switch
+  - Create-AzDiagPolicy.PS1
+  - Trigger-PolicyEvaluation.PS1
+  - Trigger-PolicyInitiativeRemediation.PS1
+
 ## Flow Diagram
 
 ![ScriptFlow](./media/ScriptOverview.png)
@@ -20,12 +27,6 @@ This documentation is meant to provide a guide to the use of the scripts sourced
 
 ## OVERVIEW OF CREATE-AZDIAGPOLICY.PS1
 
-<span style="color:dodgerBlue">**UPDATE**</span> - 
-June 7, 2020 v2.0
-* Azure Azure Policy Initiative ARM template can now be exported by Sink Type
-* "Kind" is now supported for resourceTypes in Policies Rule Evaluation
-* Execution time tracking added
-* Prettify function for JSON 
 ### About the Script (Create-AzDiagPolicy.PS1)
 
 **Create-AzDiagPolicy.ps1** is a script that creates *Azure Custom Policies for Azure resource types that support Azure Diagnostics logs and metrics*.  Policies can be created for both **Event Hub and Log Analytics** sink points with this script.  Currently, this script will only provide the policies for the resource types you **have within** the Azure Subscription that you provide either via the cmdline parameter **-SubscriptionId** or by selecting a subscription from the menu provided.  This script can also be leveraged to create an **Azure Policy Initiative ARM Template**.
